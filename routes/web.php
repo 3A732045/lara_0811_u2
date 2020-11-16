@@ -27,6 +27,12 @@ Route::get('/', function () {
 //{ return redirect('r2'); });
 //Route::get('r2', function()
 //{ return view('welcome'); });
-Route::get('hello/{name}',function($name){
+//修改 Route 接受參數
+//Route::get('hello/{name}',function($name){
+//    return'Hello,'.$name;
+//});
+//修改參數成選擇性
+Route::get('hello/{name?}',function($name='Everybody'){
     return'Hello,'.$name;
 });
+
