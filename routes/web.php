@@ -29,11 +29,11 @@ Route::get('/', function () {
 //{ return view('welcome'); });
 //修改 Route 接受參數
 //Route::get('hello/{name}',function($name){
-//    return'Hello,'.$name;
+//    return 'Hello,'.$name;
 //});
 //修改參數成選擇性
 //Route::get('hello/{name?}',function($name='Everybody'){
-//    return'Hello,'.$name;
+//    return 'Hello,'.$name;
 //});
 //將 Route 取名為 hello.index
 Route::get('hello/{name?}', function ($name='Everybody') {
@@ -43,3 +43,10 @@ Route::get('hello/{name?}', function ($name='Everybody') {
 Route::get('dashboard',function(){
     return 'dashboard';
 });
+//設定另一個 Route 以群組包起來設定 prefix
+Route::group(['prefix'=>'admin'],function(){
+    Route::get('dashboard',function(){
+        return 'admin dashboard';
+    });
+});
+
