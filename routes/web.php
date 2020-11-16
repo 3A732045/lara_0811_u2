@@ -32,7 +32,10 @@ Route::get('/', function () {
 //    return'Hello,'.$name;
 //});
 //修改參數成選擇性
-Route::get('hello/{name?}',function($name='Everybody'){
-    return'Hello,'.$name;
-});
-
+//Route::get('hello/{name?}',function($name='Everybody'){
+//    return'Hello,'.$name;
+//});
+//將 Route 取名為 hello.index
+Route::get('hello/{name?}', function ($name='Everybody') {
+    return 'Hello, '.$name;
+})->name('hello.index');
