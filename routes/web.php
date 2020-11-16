@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 //設定 Route 回傳字串
 //Route::get('/', function () {
 //    return 'welcome';
@@ -36,17 +36,18 @@ Route::get('/', function () {
 //    return 'Hello,'.$name;
 //});
 //將 Route 取名為 hello.index
-Route::get('hello/{name?}', function ($name='Everybody') {
-    return 'Hello, '.$name;
-})->name('hello.index');
-//設定 dashboard路徑的 Route
-Route::get('dashboard',function(){
-    return 'dashboard';
-});
+//Route::get('hello/{name?}', function ($name='Everybody') {
+//    return 'Hello, '.$name;
+//})->name('hello.index');
+////設定 dashboard路徑的 Route
+//Route::get('dashboard',function(){
+//    return 'dashboard';
+//});
 //設定另一個 Route 以群組包起來設定 prefix
-Route::group(['prefix'=>'admin'],function(){
-    Route::get('dashboard',function(){
-        return 'admin dashboard';
-    });
-});
+//Route::group(['prefix'=>'admin'],function(){
+//    Route::get('dashboard',function(){
+//        return 'admin dashboard';
+//    });
+//});
+Route::get('/', [HomeController::class, 'index'])->name('hello.index');
 
