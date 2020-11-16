@@ -39,3 +39,7 @@ Route::get('/', function () {
 Route::get('hello/{name?}', function ($name='Everybody') {
     return 'Hello, '.$name;
 })->name('hello.index');
+//設定 dashboard路徑的 Route
+Route::get('dashboard',function(){
+    return 'dashboard';
+});
